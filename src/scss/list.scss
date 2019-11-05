@@ -1,0 +1,46 @@
+#links {
+    width: 80%;
+    margin: 20px;
+    margin-bottom:80px;
+    border: 1px solid #ccc;
+    list-style-type: none;
+    text-align:left;
+    float:left;
+    font-size:0.9em;
+
+    li {
+        width:calc(100% + 40px);
+        height:30px;
+        border-bottom:1px solid #ccc;
+        margin-left:-40px;
+        padding:16px 0 10px 0;
+        &:last-child {
+            border:none;
+        }
+        .btn {
+            float:right;
+            margin: -9px 10px 0 auto;
+        }
+        .visits {
+            width: 30px;
+            height: 23px;
+            display: inline-block;
+            background-color: #00c600;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 15px;
+            padding-top:7px;
+            margin:-3px 10px 0 10px;
+        }
+        .delete {
+            float: right;
+            margin: 3px 16px 0 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FA130C;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}

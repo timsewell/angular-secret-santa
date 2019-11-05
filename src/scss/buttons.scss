@@ -1,0 +1,21 @@
+.btn {
+    padding:10px 20px;
+    text-align:center;
+    border:1px solid #FA130C;
+    border-radius:5px;
+    text-decoration:none;
+    color:#FA130C;
+    cursor:pointer;
+
+    &--primary {
+        color:#fff;
+        background-color:#FA130C;
+        margin-right:20px;
+        box-shadow: 5px 5px 3px 0px rgba(214,210,211,1);
+    }
+
+    &--signin {
+        margin-top:20px;
+        display:inline-block;
+    }
+}

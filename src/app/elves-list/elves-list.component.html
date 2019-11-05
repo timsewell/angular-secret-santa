@@ -1,0 +1,15 @@
+<ul id="links">
+    <li *ngFor="let elf of messageService.elves | async">
+        <span class="visits">
+            {{ elf.visited || 0 }}
+        </span>
+        {{ elf.name }}
+        <span [attr.data-id]="elf.id" class="delete"  (click)="messageService.deleteElf(elf.docId)">
+            {{ elf.showDelete }}
+        </span>
+        <a href="#" class="btn btn--primary">
+            <span *ngIf="elf.sent" (click)="messageService.sendEmail(elf.docId, $event)">Send email again</span>
+            <span *ngIf="!elf.sent" (click)="messageService.sendEmail(elf.docId, $event)">Send email</span>
+        </a>
+    </li>
+</ul>

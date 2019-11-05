@@ -1,0 +1,10 @@
+app-signin {
+    width:100%;
+    float:left;
+    margin:20px auto;
+    .form-control {
+        input {
+            float:right!important;
+        }
+    }
+}

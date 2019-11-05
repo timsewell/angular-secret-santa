@@ -1,0 +1,12 @@
+<form [formGroup]="loginForm">
+    <div class="form-control">
+        <label for="email">Email: </label>
+        <input id="email" type="email" formControlName="email">
+    </div>
+    <div class="form-control">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password">
+        <label class="error">{{errorMessage}}</label>
+    </div>
+    <button (click)="tryLogin(loginForm.value)" class="btn btn--primary btn--signin">Login</button>
+</form>

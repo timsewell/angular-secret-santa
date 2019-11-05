@@ -1,0 +1,18 @@
+<div class="container">
+    <form [formGroup]="this.form">
+        <div class="form-control">
+            <input placeholder="Email"
+                   formControlName="email"
+                   type="email"
+                   class="input-field col s12">
+        </div>
+        <div class="form-control">
+            <input placeholder="Name"
+                   formControlName="name"
+                   type="text"
+                   class="input-field col s12">
+        </div>
+        <button class="btn btn--primary" (click)="onSubmit($event)">Submit</button>
+    </form>
+    <app-elves-list></app-elves-list>
+</div>

@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    width:100%;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    line-height:16px;
+    font-size:1em;
+    text-align: center;
+
+    h1 {
+        line-height:40px;
+    }
+
+    header {
+        float:left;
+        text-align:center;
+        color:#FA130C;
+        width:100%;
+    }
+    main {
+        width:100%;
+        float:left;
+        text-align:center;
+    }
+
+    footer {
+        width:100%;
+        position:fixed;
+        bottom:0;
+        text-align:center;
+        height:60px;
+        background-color:white;
+        padding-bottom:5px;
+        .btn {
+            float:none;
+            margin:15px 0;
+            display:inline-block;
+        }
+    }
+}
+@import "./scss/signin.scss";
+@import "./scss/buttons.scss";
+@import "./scss/list.scss";
+@import "./scss/forms.scss";
