@@ -18,6 +18,7 @@ import { ElvesComponent } from './elves/elves.component';
 import { ElvesListComponent } from './elves-list/elves-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HatComponent } from './hat/hat.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { FooterComponent } from './footer/footer.component';
         ElvesComponent,
         ElvesListComponent,
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        HatComponent
     ],
     imports: [
         BrowserModule,

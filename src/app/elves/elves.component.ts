@@ -20,7 +20,6 @@ export class ElvesComponent {
 
         aEvent.stopImmediatePropagation();
         this.elvesService.createElf(data);
-        console.log(this.elvesService);
         this.form.reset();
     }
 }

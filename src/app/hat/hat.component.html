@@ -1,0 +1,10 @@
+<div *ngIf="currentUser && allocatedUser" class="name-display">
+    <p>Hi</p>
+    <p class="current-user">
+        {{ currentUser.name }}
+    </p>
+    <p>You are buying a present for</p>
+    <p class="allocated-user {{ extraClass }}">
+        {{ allocatedUser.name }}
+    </p>
+</div>

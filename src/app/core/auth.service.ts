@@ -17,15 +17,15 @@ export class AuthService {
 
     doLogin(value) {
         return new Promise<any>((resolve, reject) => {
-            firebase.auth().signInWithEmailAndPassword(value.email, value.password)
-                .then(res => {
-                    if (res.user) {
-                        sessionStorage.setItem('user', JSON.stringify({
-                            email: res.user.email
-                        }));
-                    }
-                    resolve(res);
-                }, err => reject(err));
+        firebase.auth().signInWithEmailAndPassword(value.email, value.password)
+            .then(res => {
+                if (res.user) {
+                    sessionStorage.setItem('user', JSON.stringify({
+                        email: res.user.email
+                    }));
+                }
+                resolve(res);
+            }, err => reject(err));
         });
     }
 

@@ -1,0 +1,35 @@
+.name-display {
+    font-size:1.5em;
+    font-weight:bold;
+    margin:30px auto;
+
+    .current-user {
+        color:#FA130C;
+        font-size:2em;
+        margin:0 auto;
+    }
+    .no-users-yet {
+        width:100%;
+        float:left;
+        text-align:center;
+        margin-top:30px;
+    }
+
+    .no-users-yet p {
+        color:#FA130C;
+        font-size:1.5em;
+        font-weight:bold;
+    }
+
+    .allocated-user {
+        color:#FA130C;
+        opacity:0;
+        font-size:2em;
+        margin:0 auto;
+    }
+
+    .allocated-user.show {
+        opacity:1;
+        transition: opacity, 2s;
+    }
+}

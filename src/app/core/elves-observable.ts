@@ -1,23 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import {AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import md5 from 'md5';
-
-interface CreateElfObject {
-    name: string;
-    hash: string;
-    buyingFor: string | boolean;
-    beingBoughtFor: string | boolean;
-    visited: number | boolean;
-    email: string;
-    sent: boolean;
-    added: Date;
-    showDelete?: boolean | string;
-    docId?: string;
-}
+import { IElfObject } from '../interfaces/elf-object';
 
 @Injectable({ providedIn: 'root'})
 export class ElvesObservable {
+    // tslint:disable-next-line:variable-name
     private _elves = new BehaviorSubject([]);
 
     public readonly elves = this._elves.asObservable();
@@ -56,8 +45,8 @@ export class ElvesObservable {
         });
     }
 
-    createElf(data: CreateElfObject) {
-        const object: CreateElfObject = {
+    createElf(data: IElfObject) {
+        const object: IElfObject = {
             name: data.name,
             hash: md5(data.name),
             buyingFor: false,
@@ -80,7 +69,7 @@ export class ElvesObservable {
     }
 
     deleteElf(aDocId: string) {
-        const existing: Array<CreateElfObject> = this._elves.getValue();
+        const existing: Array<IElfObject> = this._elves.getValue();
 
         this.collRef
             .doc(aDocId)
@@ -91,14 +80,13 @@ export class ElvesObservable {
     }
 
     editElf(aDocId: string, aData: any, aField: string) {
-        const existing: Array<CreateElfObject> = this._elves.getValue();
+        const existing: Array<IElfObject> = this._elves.getValue();
 
         this.collRef
             .doc(aDocId)
             .set({
                 [aField]: aData
             }, { merge: true }).then(res => {
-                console.log(res);
                 this._elves.next(existing.map(aElf => {
                     if (aElf.docId === aDocId) {
                         return {
@@ -113,14 +101,8 @@ export class ElvesObservable {
         });
     }
 
-    replaceElf(aElf: CreateElfObject, aExisting: Array<CreateElfObject>) {
-        this._elves.next(aExisting.map((aExistingElf: CreateElfObject) => {
-            return aExistingElf.hash === aElf.hash ? aElf : aExistingElf;
-        }));
-    }
-
     sendEmail(aDocId: string, aEvent: Event) {
-        const existing: Array<CreateElfObject> = this._elves.getValue();
+        const existing: Array<IElfObject> = this._elves.getValue();
 
         const elf = existing.find(aElf => aElf.docId === aDocId);
 
